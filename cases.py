@@ -1,4 +1,6 @@
 import datetime as dt
+import bs4
+import requests
 
 current_date = dt.date.today()
 past_date = current_date - dt.timedelta(days=30)
@@ -11,11 +13,14 @@ class CountryCase:
 
     def find_rate(self, country: str) -> "tuple[float, float]":
         # TODO
-        current_case = NotImplemented # get current case
-        past_case = NotImplemented # get date 30 days ago
+        url = "https://ourworldindata.org/covid-deaths"
+        content = requests.get(url)
+        soup = bs4.BeautifulSoup(content.text, 'html.parser')
+        
+
         country_pop = NotImplemented
 
-        growth_rate = (current_case-past_case) / 30
+        growth_rate = () / 99
         growth_rate_rel_population = growth_rate / country_pop
 
         return (growth_rate, growth_rate_rel_population)

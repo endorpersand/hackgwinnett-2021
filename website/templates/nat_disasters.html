@@ -1,4 +1,14 @@
 {% extends "base.html" %}
 {% block content %} 
+<div class="container p-4">
+    <h2 class="text-center font-weight-bold">Top Natural Disaster News</h2>
+</div>
+{% if image_shown %} -->
+<div class="container">
+    <img src="{{ url_for('static', filename='temp.jpg') }}" alt="stats-image" class='img-fluid'>
+</div>
+{% endif %}
+
+{% include 'news.html' %}
 
 {% endblock %}
