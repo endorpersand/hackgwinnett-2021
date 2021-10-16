@@ -4,7 +4,6 @@
     <h2 class="text-center font-weight-bold">Top COVID-19 News</h2>
 </div>
 {% include 'news.html' %}
-{% for label, stat in stats.items() %}
 <div class="container stats-container">
     {% for label, stat in stats.items() %}
     <div class="container p-4">
@@ -12,5 +11,26 @@
     </div>
     {% endfor %}
 </div>
-
+<div class="container p-4">
+    <table class='table'>
+        <thead>
+            <tr>
+                {% for h in covid_data["headings"] %}
+                    <th>{{h}}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in covid_data["data"] %}
+                <tr>
+                    {% for e in r %}
+                    <td>
+                        {{e}}
+                    </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
