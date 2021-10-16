@@ -6,15 +6,19 @@ import requests
 with open(Path("secret") / "newsapi.txt") as f:
     API_KEY = f.read()
 
-# with open(Path("tester.json")) as f:
-#     t = json.load(f)
-
+t = None
+tester = Path('tester.json')
+if tester.exists():
+    with open(tester) as f:
+        t = json.load(f)
 def get_news(query: str, n_articles: int = 5) -> list:
-    # return t["articles"][:n_articles]
+    if t is not None: return t
     week_ago = dt.date.today() - dt.timedelta(days=7)
-    r = requests.get(f"https://newsapi.org/v2/everything?q={query}&from={week_ago}&language=en&sortBy=publishedAt&apiKey={API_KEY}")
-    if r.ok:
-        news = r.json()
-        return news["articles"][:n_articles]
+    # r = requests.get(f"""https://gnews.io/api/v4/search?q="{query}"&lang=en&token={API_KEY}&from={week_ago}&max={n_articles}""")
+    # if r.ok:
+    #     news = r.json()
+    #     with open(tester, "w") as f:
+    #         json.dump(news["articles"], f)
+    #     return news["articles"]
 
-    return []
+    # return []
