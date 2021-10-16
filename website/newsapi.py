@@ -15,6 +15,6 @@ def get_news(query: str, n_articles: int = 5) -> list:
     r = requests.get(f"https://newsapi.org/v2/everything?q={query}&from={week_ago}&sortBy=publishedAt&apiKey={API_KEY}")
     if r.ok:
         news = r.json()
-        return news["articles"]
+        return news["articles"][:n_articles]
 
     return []

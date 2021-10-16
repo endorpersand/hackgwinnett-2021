@@ -21,13 +21,15 @@ def covid():
     span = soup.find_all('div', { 'class': 'maincounter-number'})
     string = str(span)
     pattern = re.compile('<span>(.*)</span>')
-    results = re.findall(pattern, string)
-    print(results)
-    
+    stats = re.findall(pattern, string)
+    stats = {
+        'Total Coronavirus Cases': stats[0],
+        'Total Deaths': stats[1],
+    }  
 
-    
+   
 
-    return render_template("covid.html", search=get_news("covid"))
+    return render_template("covid.html", search=get_news("covid"), stats=stats)
 
 @views.route("/natural-disasters")
 def nat_disasters():

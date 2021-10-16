@@ -1,3 +1,6 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 .container {
   max-width: 960px;
 }
@@ -118,4 +121,9 @@
 
 .query > .desc {
   font-size: 14px;
+}
+
+.covid-image {
+  max-width: 400px;
+  max-height: 300px;
 }
