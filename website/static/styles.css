@@ -141,3 +141,7 @@
 .white-text {
   color: white;
 }
+
+.main-header {
+  background: linear-gradient(#FA8F96, #5961F4);
+}
