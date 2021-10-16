@@ -1,12 +1,14 @@
-# Directory Structure and Files
+# Public Safety Hub
+Welcome to the GitHub repo of the Public Safety Hub!
+This requires an API key from [gnews.io](gnews.io), paste it into `secret/newsapi.txt` 
 
+## Directory Structure
 - main.py: runs the server creating the website
 - website: contains the website
 - website/static: contains non-html files that don't change (css, js, images, etc)
 - website/templates: contains html code for the website
 - website/__init\_\_.py: has function for creating website and databse
 - website/views.py: has server response for different URL endpoints
-- website/auth.py (only necessary if we have a login system): handles login server requests
 - website/models.py: contains python classes outlining the things stored in the database
 
 ## Installing Dependencies
