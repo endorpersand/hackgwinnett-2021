@@ -25,9 +25,13 @@ def covid():
     stats = {
         'Total Coronavirus Cases': stats[0],
         'Total Deaths': stats[1],
-    }  
+    } 
+    print("\n\n\n\n")
 
-   
+    changes = soup.find_all('strong')
+    pattern = re.compile('<strong>(.* new cases)</strong>') 
+    changes = re.findall(pattern, str(changes))
+    print(changes)  
 
     return render_template("covid.html", search=get_news("covid-19"), stats=stats)
 
