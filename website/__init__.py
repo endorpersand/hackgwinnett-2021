@@ -13,7 +13,3 @@ def create_app():
     app.register_blueprint(auth, url_prefix="/")
 
     return app
-
-
-for i in range(68):
-    x = 2
