@@ -1,0 +1,70 @@
+import datetime as dt
+current_date = dt.date.today()
+past_date = current_date - dt.timedelta(days=30)
+
+list countries ()			//all countries
+list country_rates()
+
+Class Country_case{
+	private string country
+	private list case_rate
+
+	public Country_case(string country, list case_rate)
+	{
+		this.country=country
+		this.case_rate=case_rate			
+	}
+
+	public list find_rate(string country)
+	{
+		list stats		
+	
+		double current_case = 
+		double past_case = 
+
+		double growth_rate = (current_case-past_case)/30
+		double growth_rate_rel_population = growth_rate/country population
+			
+		stats.add(growth_rate )
+		stats.add(growth_rate_rel_population)
+
+		return stats
+	}
+
+	public string get_country()
+
+	public double get_rate()
+	{
+		first item in the list of obj		
+	}
+
+	public double get_rel_rate()
+	{
+		second item in the list of obj	
+	}
+}
+
+int main()
+{
+	for i in range (countries.size()):
+		country_rate.add(new Country_case(countries.get(i), find_rate(countries.get(i))))
+
+	python sort go yay
+
+	for(int i = 0; i < 5; i++)
+	{
+		print(country_rate.get())			get country name, rate, rate rel population, formatting go brr
+		display graph 		
+	}
+
+	for(int i = 0; i < 5; i++)
+	{
+		
+	}
+
+	table:
+		lowest to highest rates, country name, order number, link for graph (last is optional)
+}
+
+
+
