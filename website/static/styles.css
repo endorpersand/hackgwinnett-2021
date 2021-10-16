@@ -132,3 +132,12 @@
   background-color: #921010;
   border-radius: 10px;
 }
+
+.dark-bg {
+  background-color: #292b2c;
+  color: #ffffff;
+}
+
+.white-text {
+  color: white;
+}

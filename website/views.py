@@ -46,13 +46,12 @@ def nat_disasters():
             f.write(response.content)
             image_shown = True
 
-    fire_url = 'https://disasterphilanthropy.org/disaster/2021-north-american-wildfire-season/'
-    
-    content = requests.get(fire_url)
-    soup = BeautifulSoup(content.text, 'html.parser')
+    url = "https://www.nhc.noaa.gov/xgtwo/two_atl_0d0.png?161725"
+    response = requests.get(url)
+    if response.status_code == 200:
+        with open("website/static/hurricane.jpg", 'wb') as f:
+            f.write(response.content)
+            image_shown = True
 
-
-    
-    
 
     return render_template("nat_disasters.html", search=get_news("earthquake"), image_shown=image_shown)

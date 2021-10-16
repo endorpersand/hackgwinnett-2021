@@ -45,4 +45,4 @@ for r in data:
 
     r[1:] = numerical_row
 
-data.sort(lambda r: r[1], reverse=True)
+data.sort(key=lambda r: r[1], reverse=True)
