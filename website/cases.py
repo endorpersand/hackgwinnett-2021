@@ -26,6 +26,6 @@ class CountryCase:
         return (growth_rate, growth_rate_rel_population)
 
 country_rates = [CountryCase(c) for c in countries]
-country_rates.sort(lambda e: e.case_rates[1], reverse=True)
+country_rates.sort(key=lambda e: e.case_rates[1], reverse=True)
 
 
