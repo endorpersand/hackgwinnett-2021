@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %} 
-
-<h2 class="container p-4">Top COVID-19 News</h2>
+<div class="container p-4">
+    <h2 class="text-center font-weight-bold">Top COVID-19 News</h2>
+</div>
 {% for source in search %}
 <div class="container p-4 query">
     <!--img src={{source.urlToImage}}></img-->
@@ -10,10 +11,12 @@
     <p class="desc">{{source.publishedAt.partition("T")[0]}}: {{source.description}}</p>
 </div>
 {% endfor %}
-{% for label, stat in stats.items() %}
-<div class="container p-4">
-<h1 class="text-center">{{label}}: {{stat}}</h1>
+<div class="container stats-container">
+    {% for label, stat in stats.items() %}
+    <div class="container p-4">
+    <h1 class="text-center">{{label}}: {{stat}}</h1>
+    </div>
+    {% endfor %}
 </div>
-{% endfor %}
 
 {% endblock %}

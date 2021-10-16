@@ -127,3 +127,8 @@
   max-width: 400px;
   max-height: 300px;
 }
+
+.stats-container {
+  background-color: #a21010;
+  border-radius: 10px;
+}
