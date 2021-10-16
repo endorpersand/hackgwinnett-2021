@@ -12,7 +12,7 @@ with open(Path("secret") / "newsapi.txt") as f:
 def get_news(query: str, n_articles: int = 5) -> list:
     # return t["articles"][:n_articles]
     week_ago = dt.date.today() - dt.timedelta(days=7)
-    r = requests.get(f"https://newsapi.org/v2/everything?q={query}&from={week_ago}&sortBy=publishedAt&apiKey={API_KEY}")
+    r = requests.get(f"https://newsapi.org/v2/everything?q={query}&from={week_ago}&language=en&sortBy=publishedAt&apiKey={API_KEY}")
     if r.ok:
         news = r.json()
         return news["articles"][:n_articles]
