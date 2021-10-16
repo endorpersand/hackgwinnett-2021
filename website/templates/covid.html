@@ -2,14 +2,7 @@
 {% block content %} 
 
 <h2 class="container p-4">Top COVID-19 News</h2>
-{% for source in search %}
-<div class="container p-4 query">
-    <!--img src={{source.urlToImage}}></img-->
-    <a href={{source.url}}>{{source.title}}</a>
-    <p class="url">{{source.url}}</p>
-    <p class="desc">{{source.publishedAt.partition("T")[0]}}: {{source.description}}</p>
-</div>
-{% endfor %}
+{% include 'news.html' %}
 {% for label, stat in stats.items() %}
 <div class="container p-4">
 <h1 class="text-center">{{label}}: {{stat}}</h1>

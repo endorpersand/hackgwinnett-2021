@@ -31,6 +31,6 @@ def covid():
 
     return render_template("covid.html", search=get_news("covid-19"), stats=stats)
 
-@views.route("/natural-disasters")
+@views.route("/nat-disasters")
 def nat_disasters():
     return render_template("nat_disasters.html")
