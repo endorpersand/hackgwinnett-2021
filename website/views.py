@@ -2,6 +2,7 @@ from flask import Blueprint, render_template
 from bs4 import BeautifulSoup
 import requests
 import re
+from .newsapi import get_news
 
 views = Blueprint("views", __name__)
 
@@ -26,7 +27,7 @@ def covid():
 
     
 
-    return render_template("covid.html")
+    return render_template("covid.html", search=get_news("covid"))
 
 @views.route("/natural-disasters")
 def nat_disasters():

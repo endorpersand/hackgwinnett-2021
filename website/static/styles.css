@@ -111,3 +111,11 @@
 .calendar-box {
   min-height: 125px !important;
 }
+
+.query > .url {
+  color: darkgreen;
+}
+
+.query > .desc {
+  font-size: 14px;
+}
