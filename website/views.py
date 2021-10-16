@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 import re
 from .newsapi import get_news
+from .cases import country_rates
 import os
 
 from .covid_data import headings, data
@@ -34,7 +35,7 @@ def covid():
     changes = re.findall(pattern, str(changes))
     print(changes)  
 
-    return render_template("covid.html", search=get_news("covid-19"), stats=stats, covid_data={"headings": headings, 'data': data})
+    return render_template("covid.html", search=get_news("covid-19"), stats=stats, covid_data={"headings": headings, 'data': data}, covid_data_rates=country_rates)
 
 @views.route("/nat-disasters")
 def nat_disasters():

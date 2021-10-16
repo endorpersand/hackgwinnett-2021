@@ -57,6 +57,14 @@ class CountryCase:
     @property
     def delta_death_rate(self):
         return self.delta_deaths / self.pop
+        
+    @property
+    def delta_case_rate_per_million(self):
+        return round(self.delta_cases / self.pop * 1000000, 1)
+
+    @property
+    def delta_death_rate_per_million(self):
+        return round(self.delta_deaths / self.pop * 1000000, 1)
 
 countries = set(k for k, v in current_data.items() if v["population"] != '') & set(k for k, v in past_data.items() if v["population"] != '')
 country_rates = [CountryCase(c, current_data[c]["total_cases"], past_data[c]["total_cases"], current_data[c]["total_deaths"], past_data[c]["total_deaths"], current_data[c]["population"]) for c in countries]
