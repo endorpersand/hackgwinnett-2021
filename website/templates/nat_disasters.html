@@ -1,13 +1,23 @@
 {% extends "base.html" %}
 {% block content %} 
-<div class="container p-4">
-    <h2 class="text-center font-weight-bold">Top Natural Disaster News</h2>
+
+{% if image_shown %}
+<div class="container-fluid p-4 dark-bg">
+    <div class="row justify-content-center">
+        <img src="{{ url_for('static', filename='temp.jpg') }}" alt="stats-image" class='img-fluid' style="max-width: 800px;">
+    </div>
+    <div class="container p-4">
+        <h2 class="text-center">Projected Hurricane Activity in the Atlantic</h2>
+        <p class="text-center">Data updates real-time from noaa.gov</p>
+        <img src="{{ url_for('static', filename='hurricane.jpg') }}" alt="stats-image" class='img-fluid'>
+    </div>
 </div>
-{% if image_shown %} -->
-<div class="container">
-    <img src="{{ url_for('static', filename='temp.jpg') }}" alt="stats-image" class='img-fluid'>
-</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#292b2c" fill-opacity="1" d="M0,64L26.7,58.7C53.3,53,107,43,160,80C213.3,117,267,203,320,229.3C373.3,256,427,224,480,186.7C533.3,149,587,107,640,80C693.3,53,747,43,800,53.3C853.3,64,907,96,960,122.7C1013.3,149,1067,171,1120,197.3C1173.3,224,1227,256,1280,229.3C1333.3,203,1387,117,1413,74.7L1440,32L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
 {% endif %}
+
+<div class="container p-4">
+    <h1 class="text-center font-weight-bold">Top Natural Disaster News</h2>
+</div>
 
 {% include 'news.html' %}
 
