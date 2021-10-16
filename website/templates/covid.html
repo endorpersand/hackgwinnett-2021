@@ -23,13 +23,34 @@
                 </tr>
             </thead>
             <tbody>
-                {% for r in covid_data["data"] %}
+                {% for r in covid_data["data"][:20] %}
                     <tr>
                         {% for e in r %}
                         <td class="white-text">
                             {{e}}
                         </td>
                         {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <h2 class="text-center">Rate of Increase in Cases & Deaths Per Million</h2>
+    <div class="container p-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="white-text">Country</th>
+                    <th class="white-text">Increase in Rates of Cases per Million</th>
+                    <th class="white-text">Increase in Rates of Deaths per Million</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cdr in covid_data_rates %}
+                    <tr>
+                        <td class="white-text">{{cdr.country}}</td>
+                        <td class="white-text">{{cdr.delta_case_rate_per_million}}</td>
+                        <td class="white-text">{{cdr.delta_death_rate_per_million}}</td>
                     </tr>
                 {% endfor %}
             </tbody>
